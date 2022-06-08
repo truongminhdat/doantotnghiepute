@@ -30,9 +30,10 @@ class DangtinController extends Controller
     public function edit($id)
     {
         $dangtin = Dangtin::find($id);
-        $comment = Comment::count();
+        $comment = Comment::where('dangtin_id',$id)->count('id');
         $danhgia = Danhgia::count();
         $grate = Danhgia::where('dangtin_id',$id)->avg('grate');
+        $grate = round($grate);
         return view('admin.dangtin.xemdangtin', [
                 'title' => 'Xem bài đăng'
             ]

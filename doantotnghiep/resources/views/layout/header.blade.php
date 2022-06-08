@@ -13,7 +13,7 @@
 
                     <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
                         <li><a href="{{route('trangchu')}}" class="nav-link">Trang chủ</a></li>
-                        <li class="has-children"><a href="#" class="nav-link">Loại Phòng</a>
+                        <li class="has-children"><a href="{{route('trangchu')}}" class="nav-link">Loại Phòng</a>
                             <ul class="dropdown arrow-top">
                                 @foreach($loaiphong as $data)
                                 <li><a href="{{route('trangchu.trochothue',$data->id)}}" class="nav-link">{{$data->Tenloaiphong}}</a></li>
